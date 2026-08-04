@@ -22,6 +22,8 @@ const SECTIONS = [
     title: 'Home',
     description: 'Get oriented with your loyalty dashboard — key metrics, navigation, and what to check regularly.',
     duration: '~5 min',
+    submenu: false,
+    isNew: false,
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`,
   },
   {
@@ -29,6 +31,8 @@ const SECTIONS = [
     title: 'Members',
     description: 'View and manage member profiles, points history, manual adjustments, and member search.',
     duration: '~8 min',
+    submenu: false,
+    isNew: false,
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>`,
   },
   {
@@ -36,6 +40,8 @@ const SECTIONS = [
     title: 'Program Settings',
     description: 'Configure your loyalty program rules, point calculations, earning activities, and program structure.',
     duration: '~10 min',
+    submenu: true,
+    isNew: false,
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>`,
   },
   {
@@ -43,6 +49,8 @@ const SECTIONS = [
     title: 'Gamification',
     description: 'Set up activities, bonus multipliers, tiers, and engagement mechanics to keep members active.',
     duration: '~12 min',
+    submenu: true,
+    isNew: true,
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>`,
   },
   {
@@ -50,6 +58,8 @@ const SECTIONS = [
     title: 'Analytics',
     description: 'Understand your program reports, member trends, points activity, and performance metrics.',
     duration: '~8 min',
+    submenu: true,
+    isNew: false,
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>`,
   },
   {
@@ -57,6 +67,8 @@ const SECTIONS = [
     title: 'Notifications',
     description: 'Configure email notifications and on-site loyalty widget messaging for your members.',
     duration: '~7 min',
+    submenu: true,
+    isNew: false,
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>`,
   },
   {
@@ -64,6 +76,8 @@ const SECTIONS = [
     title: 'Campaign',
     description: 'Create and manage loyalty campaigns to drive targeted member engagement and bonus point events.',
     duration: '~8 min',
+    submenu: false,
+    isNew: false,
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/>`,
   },
   {
@@ -71,6 +85,8 @@ const SECTIONS = [
     title: 'Design',
     description: 'Customize the look and feel of your loyalty program, widget, and member-facing pages.',
     duration: '~6 min',
+    submenu: true,
+    isNew: false,
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>`,
   },
   {
@@ -78,6 +94,8 @@ const SECTIONS = [
     title: 'Moderation',
     description: 'Review and manage member activities, receipt submissions, and flagged transactions.',
     duration: '~6 min',
+    submenu: false,
+    isNew: false,
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`,
   },
   {
@@ -85,6 +103,8 @@ const SECTIONS = [
     title: 'General',
     description: 'Account settings, API keys, integrations (Klaviyo, Listrak, HubSpot, and more), and platform config.',
     duration: '~8 min',
+    submenu: true,
+    isNew: false,
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>`,
   },
   {
@@ -92,6 +112,8 @@ const SECTIONS = [
     title: 'Advocacy',
     description: 'Set up referral programs, member-get-member flows, and advocacy features to grow your program.',
     duration: '~7 min',
+    submenu: true,
+    isNew: true,
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>`,
   },
   {
@@ -99,6 +121,8 @@ const SECTIONS = [
     title: 'Global Settings',
     description: 'Platform-wide configuration including custom attributes, member identifiers, and advanced settings.',
     duration: '~5 min',
+    submenu: true,
+    isNew: false,
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>`,
   },
 ];
@@ -112,23 +136,32 @@ function icon(path, cls = 'w-5 h-5') {
 }
 
 // ─── HEADER ──────────────────────────────────────────────────────────────────
-function renderHeader() {
+function renderHeader(showTracker = false) {
   const pct = Math.round((state.watched.size / SECTIONS.length) * 100);
   return `
-    <header class="shadow-md no-print" style="background-color:#001e45">
-      <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+    <header class="shadow-md flex-shrink-0" style="background-color:#001e45; height:56px;">
+      <div class="h-full px-4 flex items-center justify-between">
         <a href="#/" class="flex items-center gap-3 cursor-pointer">
           <img src="trueloyal-logo.png" alt="TrueLoyal" class="h-8 w-auto" style="mix-blend-mode:lighten" />
-          <span class="text-white/40 hidden sm:block">|</span>
-          <span class="text-white/70 text-sm hidden sm:block font-medium">Training Hub</span>
+          <span class="text-white/40">|</span>
+          <span class="text-white/70 text-sm font-medium">Training Hub</span>
         </a>
         <div class="flex items-center gap-3">
-          <div class="hidden sm:flex items-center gap-2">
-            <div class="w-24 bg-white/20 rounded-full h-1.5">
-              <div class="bg-white h-1.5 rounded-full transition-all" style="width:${pct}%"></div>
+          ${showTracker ? `
+            <div class="flex items-center gap-2.5">
+              <div class="flex gap-0.5">
+                ${SECTIONS.map(s => `<div class="h-1.5 w-5 rounded-full transition-all ${state.watched.has(s.id) ? 'bg-white' : 'bg-white/20'}"></div>`).join('')}
+              </div>
+              <span class="text-white/60 text-xs font-medium">${state.watched.size}/${SECTIONS.length}</span>
             </div>
-            <span class="text-white/60 text-xs">${state.watched.size}/${SECTIONS.length}</span>
-          </div>
+          ` : `
+            <div class="flex items-center gap-2">
+              <div class="w-28 bg-white/20 rounded-full h-1.5">
+                <div class="bg-white h-1.5 rounded-full transition-all" style="width:${pct}%"></div>
+              </div>
+              <span class="text-white/60 text-xs">${state.watched.size}/${SECTIONS.length}</span>
+            </div>
+          `}
         </div>
       </div>
     </header>
@@ -140,66 +173,62 @@ function renderHome() {
   const pct = Math.round((state.watched.size / SECTIONS.length) * 100);
   const allDone = state.watched.size === SECTIONS.length;
 
+  // Sidebar geometry matched to the screenshot (1813×832px)
+  // background-size:cover scales the image to fill the viewport height
+  // "Loyalty" header in screenshot ≈ 44px at original scale → h-11 in DOM
+  // Each sidebar item ≈ 42px → h-[42px] in DOM
+
   return `
-    <div class="min-h-screen flex flex-col" style="background-image:url('tl-admin-home.png'); background-size:cover; background-position:top left; background-attachment:fixed;">
+    <div class="flex flex-col" style="min-height:100vh; background-image:url('tl-admin-home.png'); background-size:cover; background-position:top left;">
       ${renderHeader()}
-      <div class="fixed inset-0 bg-black/45" style="top:56px; z-index:0;"></div>
 
-      <main class="relative flex-1 px-4 py-8 z-10">
-        <div class="max-w-5xl mx-auto">
+      <div class="flex flex-1">
 
-          <!-- Intro -->
-          <div class="text-center mb-8">
-            <h1 class="text-2xl font-semibold text-white mb-2">Platform Training</h1>
-            <p class="text-white/60 text-sm max-w-lg mx-auto">Work through each section of the TrueLoyal Admin Console at your own pace. Your progress is tracked below.</p>
-          </div>
+        <!-- Transparent sidebar — ghost outline buttons aligned to screenshot sidebar items -->
+        <div class="flex-shrink-0 flex flex-col pt-0" style="width:239px;">
+          <!-- Spacer matching the "Loyalty" header row in the screenshot -->
+          <div style="height:53px;"></div>
 
-          <!-- Progress card -->
-          <div class="glass rounded-2xl p-5 mb-6 shadow-xl">
+          <!-- One transparent outline button per section, stacked to align with screenshot items -->
+          ${SECTIONS.map(s => {
+            const watched = state.watched.has(s.id);
+            return `
+              <a href="#/${s.id}" title="${s.title}" class="no-underline block relative group" style="height:42px; margin: 1px 0 1px 5px;">
+                <div class="absolute inset-0 rounded-lg border transition-all duration-150 ${
+                  watched
+                    ? 'border-green-500/70 bg-green-400/25'
+                    : 'border-transparent bg-transparent'
+                }"></div>
+              </a>
+            `;
+          }).join('')}
+        </div>
+
+        <!-- Main content — screenshot shows through; tracker anchored to bottom-right blank area -->
+        <div class="flex-1 flex flex-col justify-end items-end pb-8 pr-10">
+          <div class="glass rounded-2xl p-5 shadow-2xl" style="width:460px;">
             <div class="flex items-center justify-between mb-3">
-              <span class="font-medium text-[#001e45] text-sm">${allDone ? 'Training complete!' : 'Your progress'}</span>
-              <span class="text-gray-500 text-sm">${state.watched.size} of ${SECTIONS.length} sections watched</span>
+              <span class="font-semibold text-[#001e45] text-sm">${allDone ? 'Training complete!' : 'Your progress'}</span>
+              <span class="text-gray-400 text-xs">${state.watched.size} of ${SECTIONS.length} sections watched</span>
             </div>
-            <div class="w-full bg-gray-100 rounded-full h-2">
+            <div class="w-full bg-gray-100 rounded-full h-2 mb-4">
               <div class="bg-[#001e45] h-2 rounded-full transition-all duration-500" style="width:${pct}%"></div>
             </div>
-            ${allDone ? '<p class="text-green-600 text-xs mt-2 font-medium">You have completed all training sections. Your onboarding manager will be in touch about next steps.</p>' : ''}
+            <div class="flex flex-wrap gap-1.5">
+              ${SECTIONS.map(s => {
+                const watched = state.watched.has(s.id);
+                return `<a href="#/${s.id}" class="text-xs px-2.5 py-1 rounded-full border transition-all no-underline ${
+                  watched
+                    ? 'bg-[#001e45] text-white border-[#001e45]'
+                    : 'bg-white/80 text-gray-600 border-gray-200 hover:border-[#001e45] hover:text-[#001e45]'
+                }">${s.title}</a>`;
+              }).join('')}
+            </div>
+            ${allDone ? '<p class="text-green-600 text-xs mt-3 font-medium">All sections complete — your onboarding manager will be in touch.</p>' : ''}
           </div>
-
-          <!-- Section grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            ${SECTIONS.map((s, i) => {
-              const watched = state.watched.has(s.id);
-              return `
-                <a href="#/${s.id}" class="glass rounded-xl p-4 shadow-lg card-hover block no-underline group">
-                  <div class="flex items-start justify-between mb-3">
-                    <div class="flex items-center gap-2.5">
-                      <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 ${watched ? 'bg-green-50' : 'bg-[#001e45]/8'}" style="${watched ? '' : 'background:rgba(0,30,69,0.08)'}">
-                        <span class="${watched ? 'text-green-600' : 'text-[#001e45]'}">${icon(s.icon, 'w-4.5 h-4.5')}</span>
-                      </div>
-                      <div>
-                        <div class="font-semibold text-[#001e45] text-sm leading-tight">${s.title}</div>
-                        <div class="text-gray-400 text-xs">${s.duration}</div>
-                      </div>
-                    </div>
-                    ${watched
-                      ? `<span class="text-green-500 flex-shrink-0">${icon('<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>', 'w-4 h-4')}</span>`
-                      : `<span class="text-gray-300 group-hover:text-[#001e45] transition-colors flex-shrink-0">${icon('<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>', 'w-5 h-5')}</span>`
-                    }
-                  </div>
-                  <p class="text-xs text-gray-500 leading-relaxed">${s.description}</p>
-                  <div class="mt-3 text-xs font-medium ${watched ? 'text-green-600' : 'text-[#001e45] group-hover:underline'}">${watched ? 'Watched' : 'Watch video →'}</div>
-                </a>
-              `;
-            }).join('')}
-          </div>
-
         </div>
-      </main>
 
-      <footer class="relative z-10 text-center py-5 text-xs text-white/30">
-        Need help? Contact your TrueLoyal onboarding manager.
-      </footer>
+      </div>
     </div>
   `;
 }
@@ -216,7 +245,7 @@ function renderSection(id) {
 
   return `
     <div class="min-h-screen bg-gray-50 flex flex-col">
-      ${renderHeader()}
+      ${renderHeader(true)}
       <main class="flex-1 max-w-3xl mx-auto w-full px-4 py-8">
 
         <!-- Breadcrumb -->
@@ -224,13 +253,6 @@ function renderSection(id) {
           ${icon('<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>', 'w-4 h-4')}
           Back to overview
         </a>
-
-        <!-- Progress strip -->
-        <div class="flex gap-1 mb-6">
-          ${SECTIONS.map(s => `
-            <div class="h-1 flex-1 rounded-full transition-all ${state.watched.has(s.id) ? 'bg-[#001e45]' : s.id === id ? 'bg-[#001e45]/30' : 'bg-gray-200'}"></div>
-          `).join('')}
-        </div>
 
         <!-- Section label -->
         <div class="flex items-center gap-2 mb-4 text-sm text-gray-400">
