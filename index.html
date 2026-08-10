@@ -182,8 +182,8 @@ function renderHeader(showTracker = false) {
 
 // ─── HOME ────────────────────────────────────────────────────────────────────
 // Image reference dimensions: 1813 × 832 px
-// Sidebar nav items start at y=53px, each slot is 60px tall (56px item + 4px gap)
-// Sidebar width: 481px, item left margin: 5px, item width: 476px
+// Sidebar nav items: Home starts at y=112px, each slot is 44px (icon centers measured from image)
+// Sidebar right edge at x≈250px; item left margin 5px, item width 240px
 // All overlay positions expressed as % of image so they scale at any viewport width.
 function renderHome() {
   const pct = Math.round((state.watched.size / SECTIONS.length) * 100);
@@ -194,10 +194,10 @@ function renderHome() {
 
   const overlays = SECTIONS.map((s, i) => {
     const watched = state.watched.has(s.id);
-    const topPct  = ((53 + i * 60) / IMG_H * 100).toFixed(3);
-    const leftPct = (5             / IMG_W * 100).toFixed(3);
-    const wPct    = (476           / IMG_W * 100).toFixed(3);
-    const hPct    = (56            / IMG_H * 100).toFixed(3);
+    const topPct  = ((112 + i * 44) / IMG_H * 100).toFixed(3);
+    const leftPct = (5              / IMG_W * 100).toFixed(3);
+    const wPct    = (240            / IMG_W * 100).toFixed(3);
+    const hPct    = (40             / IMG_H * 100).toFixed(3);
     return `
       <a href="#/${s.id}" title="${s.title}"
         style="position:absolute; top:${topPct}%; left:${leftPct}%; width:${wPct}%; height:${hPct}%;
