@@ -185,59 +185,61 @@ function renderHome() {
   const pct = Math.round((state.watched.size / SECTIONS.length) * 100);
   const allDone = state.watched.size === SECTIONS.length;
 
-  // Sidebar geometry matched to the screenshot (1813×832px)
-  // background-size:cover scales the image to fill the viewport height
-  // "Loyalty" header in screenshot ≈ 44px at original scale → h-11 in DOM
-  // Each sidebar item ≈ 42px → h-[42px] in DOM
-
   return `
-    <div class="flex flex-col" style="min-height:100vh; background-image:url('tl-admin-home.png'); background-size:cover; background-position:top left;">
+    <div class="min-h-screen bg-gray-50 flex flex-col">
       ${renderHeader()}
 
-      <div class="flex flex-1">
+      <div class="flex-1 max-w-5xl mx-auto w-full px-6 py-8">
 
-        <!-- Transparent sidebar — ghost outline buttons aligned to screenshot sidebar items -->
-        <div class="flex-shrink-0 flex flex-col pt-0 overflow-hidden" style="width:239px;">
-          <!-- Spacer matching the "Loyalty" header row in the screenshot -->
-          <div style="height:53px;"></div>
+        <!-- Intro -->
+        <div class="mb-2">
+          <h1 class="text-2xl font-bold text-[#001e45] mb-1">Welcome to the TrueLoyal Training Hub</h1>
+          <p class="text-gray-500 text-sm">Work through each section at your own pace. Mark sections as watched to track your progress.</p>
+        </div>
 
-          <!-- One transparent outline button per section, stacked to align with screenshot items -->
+        <!-- Progress bar -->
+        <div class="bg-white rounded-2xl p-5 shadow-sm mb-8">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm font-medium text-[#001e45]">${allDone ? 'Training complete!' : 'Your progress'}</span>
+            <span class="text-sm text-gray-400">${state.watched.size} of ${SECTIONS.length} sections watched</span>
+          </div>
+          <div class="w-full bg-gray-100 rounded-full h-2">
+            <div class="h-2 rounded-full transition-all duration-500" style="width:${pct}%; background:#1F2A44;"></div>
+          </div>
+          ${allDone ? '<p class="text-green-600 text-xs mt-3 font-medium">All sections complete — your onboarding manager will be in touch.</p>' : ''}
+        </div>
+
+        <!-- Section grid -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:16px;">
           ${SECTIONS.map(s => {
             const watched = state.watched.has(s.id);
             return `
-              <a href="#/${s.id}" title="${s.title}" class="no-underline relative group" style="display:block; height:42px; margin: 1px 0; margin-left:5px; width:calc(100% - 10px);">
-                <div class="absolute inset-0 rounded-lg border transition-all duration-150 ${
-                  watched
-                    ? 'border-green-500/70 bg-green-400/25'
-                    : 'border-transparent bg-transparent'
-                }"></div>
+              <a href="#/${s.id}" class="no-underline block bg-white rounded-2xl p-5 shadow-sm card-hover border-2 transition-all ${
+                watched ? 'border-green-400' : 'border-transparent hover:border-[#1F2A44]/20'
+              }">
+                <div class="flex items-start justify-between mb-3">
+                  <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(31,42,68,0.08)">
+                    <span class="text-[#1F2A44]">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">${s.icon}</svg>
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    ${s.isNew ? '<span class="text-xs font-medium px-2 py-0.5 rounded-full" style="background:#F9B5C4; color:#1F2A44;">New</span>' : ''}
+                    ${watched
+                      ? `<span class="text-xs font-medium text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                           Watched
+                         </span>`
+                      : ''
+                    }
+                  </div>
+                </div>
+                <h3 class="font-semibold text-[#1F2A44] text-sm mb-1">${s.title}</h3>
+                <p class="text-gray-400 text-xs leading-relaxed mb-3">${s.description}</p>
+                <span class="text-xs text-gray-400">${s.duration}</span>
               </a>
             `;
           }).join('')}
-        </div>
-
-        <!-- Main content — screenshot shows through; tracker anchored to bottom-right blank area -->
-        <div class="flex-1 flex flex-col justify-end items-end pb-8 pr-10">
-          <div class="glass rounded-2xl p-5 shadow-2xl" style="width:460px;">
-            <div class="flex items-center justify-between mb-3">
-              <span class="font-semibold text-[#001e45] text-sm">${allDone ? 'Training complete!' : 'Your progress'}</span>
-              <span class="text-gray-400 text-xs">${state.watched.size} of ${SECTIONS.length} sections watched</span>
-            </div>
-            <div class="w-full bg-gray-100 rounded-full h-2 mb-4">
-              <div class="bg-[#001e45] h-2 rounded-full transition-all duration-500" style="width:${pct}%"></div>
-            </div>
-            <div class="flex flex-wrap gap-1.5">
-              ${SECTIONS.map(s => {
-                const watched = state.watched.has(s.id);
-                return `<a href="#/${s.id}" class="text-xs px-2.5 py-1 rounded-full border transition-all no-underline ${
-                  watched
-                    ? 'bg-[#001e45] text-white border-[#001e45]'
-                    : 'bg-white/80 text-gray-600 border-gray-200 hover:border-[#001e45] hover:text-[#001e45]'
-                }">${s.title}</a>`;
-              }).join('')}
-            </div>
-            ${allDone ? '<p class="text-green-600 text-xs mt-3 font-medium">All sections complete — your onboarding manager will be in touch.</p>' : ''}
-          </div>
         </div>
 
       </div>
