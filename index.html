@@ -197,7 +197,7 @@ function renderHome() {
       <div class="flex flex-1">
 
         <!-- Transparent sidebar — ghost outline buttons aligned to screenshot sidebar items -->
-        <div class="flex-shrink-0 flex flex-col pt-0" style="width:239px;">
+        <div class="flex-shrink-0 flex flex-col pt-0 overflow-hidden" style="width:239px;">
           <!-- Spacer matching the "Loyalty" header row in the screenshot -->
           <div style="height:53px;"></div>
 
@@ -205,7 +205,7 @@ function renderHome() {
           ${SECTIONS.map(s => {
             const watched = state.watched.has(s.id);
             return `
-              <a href="#/${s.id}" title="${s.title}" class="no-underline block relative group" style="height:42px; margin: 1px 0 1px 5px;">
+              <a href="#/${s.id}" title="${s.title}" class="no-underline relative group" style="display:block; height:42px; margin: 1px 0; margin-left:5px; width:calc(100% - 10px);">
                 <div class="absolute inset-0 rounded-lg border transition-all duration-150 ${
                   watched
                     ? 'border-green-500/70 bg-green-400/25'
